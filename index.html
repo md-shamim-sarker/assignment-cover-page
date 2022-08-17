@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./image/wub-logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Cover Page</title>
+</head>
+
+<body>
+    <div class="container mx-auto text-center mt-5 pt-3">
+        <h1 class="text-xxl-center">World University of Bangladesh</h1>
+        <h3>Department of Civil Engineering</h3>
+        <img src="./image/wub-logo.png" alt="" class="img-fluid my-4">
+        <h3>COURSE TITLE: <span id="course-title-out"></span></h3>
+        <h3 id="course-code-out">COURSE CODE: <span></span></h3>
+        <h3 id="content-type-out" class="my-4 text-black text-uppercase"></h3>
+
+        <div class="w-100 border text-start d-flex flex-row p-2">
+            <div class="w-100 border p-2">
+                <div>
+                    <p class="border p-2"><strong>Submitted By</strong></p>
+                    <strong>NAME:</strong> <span id="student-name-out"></span><br>
+                    <strong>REG:</strong> <span id="reg-out"></span><br>
+                    <strong>ROLL:</strong> <span id="roll-out"></span><br>
+                    <strong>BATCH:</strong> <span id="batch-out"></span><br>
+                    <strong>SEMESTER:</strong> <span id="semester-out"></span>
+                </div>
+            </div>
+            <div class="w-100 border p-2">
+                <div>
+                    <p class="border p-2"><strong>Submitted To</strong></p>
+                    <strong>NAME:</strong> <span id="teacher-out"></span><br>
+                    <span id="designation-out"></span><br>
+                    <span>Department of civil Engineering</span><br>
+                    <span>World University of Bangladesh (WUB)</span>
+                </div>
+            </div>
+        </div>
+
+        <h4 class="text-end mt-3">Submission Date: <span id="date-out"></span></h4>
+        <div class="text-center mb-4">
+            <!-- Button trigger modal -->
+            <button id="new-button" type="button" class="btn btn-primary" data-bs-toggle="modal"
+                data-bs-target="#staticBackdrop">
+                New
+            </button>
+            <button class="btn btn-primary" id="print-button">Print</button>
+        </div>
+
+
+        <!-- Modal -->
+        <div class="modal fade text-start" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+            tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Your Information</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form class="row g-3">
+                            <div class="col-12">
+                                <label for="course-title-in" class="form-label">Course Title</label>
+                                <input type="text" class="form-control" id="course-title-in">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="content-type" class="form-label">Content Type</label>
+                                <select id="content-type-in" class="form-select">
+                                    <option selected>Assignment</option>
+                                    <option>Case Study</option>
+                                    <option>Term paper</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="course-code" class="form-label">Course Code</label>
+                                <input type="text" class="form-control" id="course-code-in">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="student-name" class="form-label">Your Full Name</label>
+                                <input type="text" class="form-control" id="student-name-in"
+                                    value="Mst. Sarmin Sultana">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="student-reg" class="form-label">Your Registration</label>
+                                <input type="text" class="form-control" id="reg-in" value="WUB-10/19/81/7172">
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="student-roll" class="form-label">Your Roll</label>
+                                <input type="text" class="form-control" id="roll-in" value="7172">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="student-batch" class="form-label">Your Batch</label>
+                                <input type="text" class="form-control" id="batch-in" value="81/C">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="student-semester" class="form-label">Your Semester</label>
+                                <select id="semester-in" class="form-select">
+                                    <option>1<sup>st</sup></option>
+                                    <option>2<sup>nd</sup></option>
+                                    <option>3<sup>rd</sup></option>
+                                    <option>4<sup>th</sup></option>
+                                    <option>5<sup>th</sup></option>
+                                    <option>6<sup>th</sup></option>
+                                    <option>7<sup>th</sup></option>
+                                    <option>8<sup>th</sup></option>
+                                    <option selected>9<sup>th</sup></option>
+                                    <option>10<sup>th</sup></option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="teacher-name" class="form-label">Teacher Name</label>
+                                <input type="text" class="form-control" id="teacher-in">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="teacher-designation" class="form-label">Teacher Designation</label>
+                                <select id="designation-in" class="form-select">
+                                    <option selected>Lecturer</option>
+                                    <option>Professor</option>
+                                    <option>Dean</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="submission-date" class="form-label">Submission Date</label>
+                                <input type="text" class="form-control" id="date-in">
+                            </div>
+
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="col-12">
+                            <button id="submit-button" type="button" class="btn btn-primary"
+                                data-bs-dismiss="modal">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
